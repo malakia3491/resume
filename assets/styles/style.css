@@ -1,0 +1,413 @@
+/* ==========================================================================
+   --- 1. ГЛОБАЛЬНЫЕ СТИЛИ И ПЕРЕМЕННЫЕ ---
+   ========================================================================== */
+:root {
+    /* Цветовая палитра */
+    --bg-primary: #0a0e1a;      /* Основной фон */
+    --bg-secondary: #0e1320;   /* Фон контейнера */
+    --card-bg: #151a2d;         /* Фон карточек */
+    --text-primary: #e6eef8;    /* Основной текст */
+    --text-secondary: #9aa4b2;  /* Вторичный, приглушенный текст */
+    --accent-blue: #60a5fa;      /* Голубой акцент (ссылки, заголовки) */
+    --accent-purple: #7c3aed;    /* Фиолетовый акцент (детали) */
+    --border-color: rgba(255, 255, 255, 0.08); /* Цвет рамок и разделителей */
+
+    /* Кнопки */
+    --btn-bg: #2563eb;          /* Спокойный синий для кнопок */
+    --btn-bg-hover: #1d4ed8;     /* Затемненный синий при наведении */
+
+    /* Типографика */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+    /* Размеры и отступы */
+    --border-radius: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 30px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-wrap: break-word;
+}
+
+
+/* ==========================================================================
+   --- 2. ОСНОВНАЯ СТРУКТУРА И ЛЕЙАУТ ---
+   ========================================================================== */
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: var(--spacing-lg);
+    background: var(--bg-secondary);
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(2, 6, 23, 0.6);
+    border: 1px solid var(--border-color);
+    flex-grow: 1;
+}
+
+.main-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.two-columns {
+    grid-template-columns: 2fr 1fr;
+}
+
+.one-column {
+    grid-template-columns: 1fr;
+}
+
+footer {
+    margin-top: 40px;
+    padding: var(--spacing-md);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+
+/* ==========================================================================
+   --- 3. ХЕДЕР (ШАПКА САЙТА) ---
+   ========================================================================== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Левая часть: Аватар и Имя */
+.header-identity {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    transition: border-color 0.3s ease;
+}
+
+.header-identity:hover .avatar {
+    border-color: var(--accent-blue);
+}
+
+.header-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-text h2 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Правая часть: Навигация и Контакты */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.navbar {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar a,
+.navbar a:visited { /* ИСПРАВЛЕНО */
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--text-primary);
+}
+
+.navbar a.active {
+    color: var(--accent-blue);
+    border-bottom-color: var(--accent-blue);
+}
+
+.contact-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icon,
+.contact-icon:visited { /* ИСПРАВЛЕНО */
+    color: var(--text-secondary);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-icon:hover {
+    color: var(--accent-blue);
+    transform: scale(1.1);
+}
+
+.contact-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+
+/* ==========================================================================
+   --- 4. ОБЩИЕ КОМПОНЕНТЫ (КАРТОЧКИ, КНОПКИ, ЗАГОЛОВКИ) ---
+   ========================================================================== */
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(2, 6, 23, 0.3);
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: var(--spacing-md);
+    color: var(--accent-blue);
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--accent-purple);
+    border-radius: 2px;
+}
+
+p {
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.small-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+ul li::before {
+    content: '•';
+    color: var(--accent-blue);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.btn,
+.btn:visited { /* ИСПРАВЛЕНО */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    background-color: var(--btn-bg);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background-color: var(--btn-bg-hover);
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Стили для ссылок внутри контента --- */ /* ДОБАВЛЕНО */
+.card a,
+.card a:visited {
+    color: var(--accent-blue);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.card a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   --- 5. СПЕЦИФИЧНЫЕ СТИЛИ ДЛЯ СТРАНИЦ ---
+   ========================================================================== */
+
+/* --- Страница "Опыт" --- */
+.project-detail {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px dashed var(--border-color);
+}
+.project-detail:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.project-detail h3 {
+    font-size: 20px;
+    color: var(--accent-blue);
+    margin-bottom: 8px;
+}
+.project-detail .repo-link {
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: block;
+}
+.project-detail .repo-link a,
+.project-detail .repo-link a:visited { /* ИСПРАВЛЕНО */
+    color: var(--text-secondary); /* Этот стиль более специфичен и переопределит синий цвет для репо-ссылок */
+    font-weight: 500;
+}
+.project-detail .tech-badges .badge {
+    background: rgba(124, 58, 237, 0.2);
+    border-color: rgba(124, 58, 237, 0.4);
+    font-size: 13px;
+    padding: 6px 12px;
+}
+.project-detail pre {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-purple);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #d1d5db;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+.project-detail code {
+    font-family: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+}
+.project-detail ol {
+    list-style: decimal;
+    padding-left: var(--spacing-md);
+}
+
+/* --- Страница "Образование" --- */
+.education-item {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px dashed var(--border-color);
+}
+.education-item:last-child {
+    border-bottom: none;
+}
+.education-item h3 {
+    font-size: 20px;
+}
+.education-item ul li::before {
+    content: '✓';
+    color: var(--accent-purple);
+    font-weight: 700;
+}
+
+
+/* ==========================================================================
+   --- 6. АДАПТИВНОСТЬ (MEDIA QUERIES) ---
+   ========================================================================== */
+@media (max-width: 992px) {
+    .two-columns {
+        grid-template-columns: 1fr; /* Главная страница становится одноколоночной */
+    }
+    .container {
+        margin: var(--spacing-md);
+        padding: 25px;
+    }
+}
+
+@media (max-width: 800px) {
+    .site-header {
+        flex-direction: column; /* Хедер складывается в колонку */
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+        width: 100%;
+    }
+    h1 { font-size: 22px; }
+    h2 { font-size: 14px; }
+}

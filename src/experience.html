@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Опыт — Junior Python / ML Engineer. Подробности проектов, роль и технологии." />
+    <title>Вологин Никита — Опыт</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/styles/style.css">
+    <script>
+        function copyEmail() {
+            const email = 'vnss6467@gmail.com';
+            navigator.clipboard?.writeText(email).then(() => {
+                const el = document.getElementById('copyHint');
+                el.textContent = 'Скопировано!';
+                setTimeout(() => el.textContent = 'Скопировать e‑mail', 1500);
+            });
+        }
+    </script>
+</head>
+<body>
+<main class="container">
+    <header class="site-header">
+        <!-- Левая часть: Аватар и Имя -->
+        <div class="header-identity">
+            <img src="../assets/images/avatar.jpg" alt="Фотография Никиты Вологина" class="avatar">
+            <div class="header-text">
+                <h1>Вологин Никита</h1>
+                <h2>Junior Developer</h2>
+            </div>
+        </div>
+
+        <!-- Правая часть: Навигация и Контакты -->
+        <div class="header-controls">
+            <nav class="navbar">
+                <a href="index.html">Главная</a>
+                <a href="education.html">Образование</a>
+                <a href="experience.html">Опыт</a>
+            </nav>
+            <div class="contact-bar">
+                <a href="https://github.com/malakia3491" target="_blank" class="contact-icon" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                </a>
+                <a href="https://t.me/ns2976" target="_blank" class="contact-icon" title="Telegram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.999 2C6.477 2 2 6.477 2 12s4.477 10 9.999 10C17.523 22 22 17.523 22 12S17.523 2 11.999 2zM8.501 13.439l2.293-2.293.003-.003 4.238-4.238a.5.5 0 0 1 .707.707l-4.238 4.238-2.293 2.293a.5.5 0 0 1-.707-.707z"/></svg>
+                </a>
+                <a href="mailto:vnss6467@gmail.com" class="contact-icon" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-grid one-column">
+        <section class="card">
+            <h2 class="section-title">Опыт и проекты</h2>
+
+            <div class="project-detail" id="diploma">
+                <h3>Дипломная работа: Подсистема контроля выкладки товаров на полках магазина</h3>
+                <span class="repo-link">
+                    <a href="https://github.com/malakia3491/retail_alcohol_detection" target="_blank">Репозиторий проекта</a>
+                    <span style="margin: 0 5px; color: var(--text-secondary);">|</span>
+                    <a href="https://www.kaggle.com/datasets/axlifreeway/retail-alcohol-detection-dataset" target="_blank">Dataset на Kaggle</a>
+                </span>
+                <p><strong>Ситуация:</strong> В рамках дипломной работы требовалось выполнить техническое задание, спроектировать и разработать подсистему видеоаналитики для детекции и классификации товаров на полках магазинов. Проект был направлен на снижение количества отсутствующих товаров и ускорение реакции персонала.</p>
+                <p><strong>Задача:</strong> Создать полноценный пайплайн обработки изображений, от получения данных до инференса ML-модели, с разработкой backend, frontend и интеграцией с внешними сервисами.</p>
+                <p><strong>Действие:</strong></p>
+                <ul>
+                    <li>Реализовал пайплайн обработки изображений: от получения данных до инференса модели (YOLO).</li>
+                    <li>Разработал backend на Python с использованием FastAPI, SQLAlchemy и PostgreSQL; использовал ultralytics (YOLO), PyTorch, scikit-learn и OpenCV.</li>
+                    <li>Разработал пользовательский интерфейс на Vue.js и TypeScript.</li>
+                    <li>Выполнил интеграцию с Telegram API для отправки уведомлений с помощью aiogram.</li>
+                    <li>Реализовал приложение на PyQt5 для отправки изображений на backend.</li>
+                </ul>
+                <p><strong>Результат:</strong> Успешно спроектирована и разработана рабочая подсистема видеоаналитики, демонстрирующая высокую эффективность в детекции и классификации товаров, способная улучшить операционные процессы магазинов.</p>
+                <div class="skill-badges tech-badges">
+                    <span class="badge">Python</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">SQLAlchemy</span>
+                    <span class="badge">PostgreSQL</span>
+                    <span class="badge">YOLO</span>
+                    <span class="badge">PyTorch</span>
+                    <span class="badge">scikit-learn</span>
+                    <span class="badge">OpenCV</span>
+                    <span class="badge">Vue.js</span>
+                    <span class="badge">TypeScript</span>
+                    <span class="badge">Telegram API</span>
+                    <span class="badge">aiogram</span>
+                    <span class="badge">PyQt5</span>
+                    <span class="badge">ML</span>
+                    <span class="badge">Computer Vision</span>
+                </div>
+            </div>
+
+            <div class="project-detail" id="sokoban">
+                <h3>Sokoban</h3>
+                <span class="repo-link"><a href="https://github.com/Axlifreeway/Sokoban" target="_blank">Репозиторий проекта</a></span>
+                <p><strong>Ситуация:</strong> Реализация проекта-игры в качестве дополнительного задания на дисциплине ИИП.</p>
+                <p><strong>Задача:</strong> Координация действий разработчиков-одногруппников, реализация графики и анимаций.</p>
+                <p><strong>Действие:</strong> Совместными усилиями определили интересующий жанр игры, аспекты разработки, сформировали общее видение, а затем спланировали разработку. В качестве координатора уточнял сроки выполнения, проблемы реализации. Для графики использовал графический движок WindowsForms, публично доступные ассеты для анимаций и статичной графики.</p>
+                <p><strong>Результат:</strong> Разработали игру согласно сформированному ТЗ, забыв реализовав лишь несколько деталей. Защитили реализацию и закрыли предмет.</p>
+                <div class="skill-badges tech-badges">
+                    <span class="badge">C#</span>
+                    <span class="badge">WindowsForms</span>
+                    <span class="badge">Координация команды</span>
+                </div>
+            </div>
+
+            <div class="project-detail" id="animal-health-grpc">
+                <h3>Animal-health-grpc</h3>
+                <span class="repo-link"><a href="https://github.com/xefheh/animal-health-grpc" target="_blank">Репозиторий проекта</a></span>
+                <p><strong>Ситуация:</strong> Согласно предоставленным функциональным требованиям провести анализ и спроектировать решение для организации по отлову животных.</p>
+                <p><strong>Задача:</strong> Разделить функциональные требования по разработчикам, проанализировать требования, провести анализ (прецеденты, диаграммы системных операций, диаграмма предметной области), спроектировать решение (схема базы данных, диаграмма коммуникаций, диаграмма программных классов), написать код по проектному решению.</p>
+                <p><strong>Действие:</strong> Разделил в равной степени между участниками проекта требования, приступили к итеративной защите каждого из перечисленных артефактов, а затем к реализации.</p>
+                <p><strong>Результат:</strong> Проект был успешно реализован в соответствии с требованиями, продемонстрировав навыки системного анализа, проектирования и командной разработки с использованием gRPC.</p>
+                <div class="skill-badges tech-badges">
+                    <span class="badge">gRPC</span>
+                    <span class="badge">Анализ требований</span>
+                    <span class="badge">Проектирование систем</span>
+                    <span class="badge">Командная работа</span>
+                </div>
+            </div>
+
+            <div class="project-detail" id="domovoi">
+                <h3>Домовой (DomovoiFrontend, DomovoiBackend)</h3>
+                <span class="repo-link">
+                    <a href="https://github.com/malakia3491/DomovoiFrontend" target="_blank">Frontend репозиторий</a>
+                    <span style="margin: 0 5px; color: var(--text-secondary);">|</span>
+                    <a href="https://github.com/malakia3491/DomovoiBackend" target="_blank">Backend репозиторий</a>
+                </span>
+                <p><strong>Ситуация:</strong> В рамках дисциплины программной инженерии придумать, сформулировать и разработать проект в команде.</p>
+                <p><strong>Задача:</strong> Выбрать интересный для всех проект, распределить обязанности и приступить к работе.</p>
+                <p><strong>Действие:</strong> Отвечал за поддержку основного разработчика на фронте, реализовывал инфраструктурный код для пользовательского интерфейса, а также реализовывал чат для общения, работа над которым включала код как фронта, так и бэка. Помимо этого, впервые выступал в роли скрам-мастера.</p>
+                <p><strong>Результат:</strong> Проект был реализован лишь частично, поскольку работа в команде оказалась сложной. Скрам-методология не была внедрена, так как участники команды не были заинтересованы в её применении, удобнее было проводить общение неформально, как и реализовывать фичи. Несмотря на сложности, были получены ценные уроки по командной динамике и гибким методологиям.</p>
+                <div class="skill-badges tech-badges">
+                    <span class="badge">Vue.js</span>
+                    <span class="badge">TypeScript</span>
+                    <span class="badge">Backend Development</span>
+                    <span class="badge">WebSockets</span>
+                    <span class="badge">Scrum Master (опыт)</span>
+                </div>
+            </div>
+
+            <div class="project-detail" id="bookmaster3000">
+                <h3>BookMaster3000</h3>
+                <span class="repo-link"><a href="https://github.com/St-Luca/BookMaster3000" target="_blank">Репозиторий проекта</a></span>
+                <p><strong>Ситуация:</strong> В рамках дисциплины программной инженерии разработать проект в команде согласно ТЗ.</p>
+                <p><strong>Задача:</strong> Был назначен на роль системного аналитика совместно с одним одногруппником.</p>
+                <p><strong>Действие:</strong> Согласно ТЗ я провёл анализ и подготовил проектное решение. По подготовленным мной артефактам разработчики писали код.</p>
+                <p><strong>Результат:</strong> Проект был реализован полностью со всеми функциями из ТЗ. Благодаря выделению отдельного менеджера, отвечающего за работу команды, удалось достичь итеративной разработки и прийти к конечному продукту.</p>
+                <div class="skill-badges tech-badges">
+                    <span class="badge">Системный анализ</span>
+                    <span class="badge">Проектирование БД</span>
+                    <span class="badge">ТЗ</span>
+                    <span class="badge">Командная разработка</span>
+                </div>
+            </div>
+
+            <div class="project-detail" id="manga-parser">
+                <h3>Manga Chan Parser</h3>
+                <span class="repo-link"><a href="https://github.com/malakia3491/manga_chan_parser" target="_blank">Репозиторий проекта</a></span>
+                <p><strong>Ситуация:</strong> В рамках собственной нужды появилась необходимость парсера для скачивания манги.</p>
+                <p><strong>Задача:</strong> Реализовать легко расширяемое приложение с точки зрения добавления новых источников манги</p>
+                <p><strong>Действие:</strong> Проанализировал структуру сайтов, создал общую модель данных, спроектировал и реализовал приложение</p>
+                <p><strong>Результат:</strong> Приложение реализовано</p>
+                <div class="skill-badges tech-badges">
+                    <span class="badge">Python</span>
+                    <span class="badge">SQLAlchemy</span>
+                    <span class="badge">BeautifulSoup4</span>
+                    <span class="badge">aiohttp</span>
+                    <span class="badge">SQLite</span>
+                    <span class="badge">Web Scraping</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+</body>
+</html>
